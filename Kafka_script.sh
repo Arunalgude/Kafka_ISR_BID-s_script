@@ -14,7 +14,7 @@ kafka-topics --zookeeper $hostname:2181 --describe | grep -i isr | grep -i topic
 
 
 a=(`cat brokerids.txt |  sed 's/[][]//g'| sed -e 's/,//g'| sort -u|uniq -u`)
-b=(`cat isr.txt |  sed 's/,/, /g; s/,\s\+/, /g' | sed -e 's/,//g'| sed 's/\Isr://g'| uniq -u | tr ' ' '\n' | sort -u | tr '\n' ' '`)
+b=(`cat isr.txt |  sed 's/,/, /g; s/,\s\+/, /g' | sed -e 's/,//g'| sed 's/\Isr://g'| uniq  | tr ' ' '\n' | sort -u | tr '\n' ' '`)
 echo ${a[@]}
 echo ${b[@]}
 
