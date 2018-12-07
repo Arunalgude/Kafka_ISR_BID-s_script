@@ -1,6 +1,6 @@
 #!/bin/bash
 #set -x
-# This Kafka script is for only checking the addtional entries in ISR and Broker ids.
+# This Kafka script is only for to find if consumer_offset topic is updated with correct broker ID's for ISR's
 # This script is tested for CDH cluster which has parcel based installation.
 
 echo " Please enter any Zookeeper hostname:- "
