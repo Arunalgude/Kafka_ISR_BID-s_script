@@ -2,6 +2,7 @@
 #set -x
 # This Kafka script is only for to find if consumer_offset topic is updated with correct broker ID's for ISR's
 # This script is tested for CDH cluster which has parcel based installation.
+# Copyright Clairvoyant 2016
 
 echo " Please enter any Zookeeper hostname:- "
 
