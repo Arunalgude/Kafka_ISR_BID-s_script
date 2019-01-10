@@ -40,9 +40,9 @@ while [ $num_a -ge 0 ] ; do
 
 
     if [ $flag -eq 1 ]; then
-        echo "Broker id ${a[$num_a]} is not used in any of of ISR..." | mail -s "KAFKA_OFFSET_STATUS" -aFrom:Arun\<example@gmail.com\> someone@mail.com
+        echo "Broker id ${a[$num_a]} is not used in any of of ISR..." | mail -s "KAFKA_OFFSET_STATUS" -aFrom:someone\<example@gmail.com\> someone@mail.com
     else
-        echo "No addtional Broker ids in Broker Id's config found. All OK...:)" | mail -s "KAFKA_OFFSET_STATUS" -aFrom:Arun\<example@gmail.com\> someone@mail.com
+        echo "No addtional Broker ids in Broker Id's config found. All OK...:)" | mail -s "KAFKA_OFFSET_STATUS" -aFrom:someone\<example@gmail.com\> someone@mail.com
     fi
 done
 
@@ -58,9 +58,9 @@ while [ $num_b -ge 0 ] ; do
     done
 
     if [ $flag -eq 1 ]; then
-        echo "ISR ${b[$num_b]} is not used in any of of Broker_Ids..." | mail -s "KAFKA_OFFSET_STATUS" -aFrom:Arun\<example@gmail.com\> someone@mail.com
+        echo "ISR ${b[$num_b]} is not used in any of of Broker_Ids..." | mail -s "KAFKA_OFFSET_STATUS" -aFrom:someone\<example@gmail.com\> someone@mail.com
     else
-        echo "No addtional entries found in ISR for broker ids...:)" | mail -s "KAFKA_OFFSET_STATUS" -aFrom:Arun\<example@gmail.com\> someone@mail.com
+        echo "No addtional entries found in ISR for broker ids...:)" | mail -s "KAFKA_OFFSET_STATUS" -aFrom:someone\<example@gmail.com\> someone@mail.com
     fi
 done
 
