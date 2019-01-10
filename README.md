@@ -1,2 +1,4 @@
-# Kafka_ISR_BID-s_script
- Find out a way to see if consumer_offset topic is updated with correct broker ID's for ISR's
+# Script to check consumer_offset topic for KAFKA. 
+
+The script is for checking the kafka offsets are getting updated with correct broker ids upon restart of KAFKA service.
+Run script as sudo user.
