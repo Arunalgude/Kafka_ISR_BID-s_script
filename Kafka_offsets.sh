@@ -35,7 +35,7 @@ var=$(echo $var | sed 's/^//g')
 done <<< $(echo $full_isr)
 
 if [[ -z $report_client ]];then
-   echo "No Invalid" | mailx -s "  Kafka_Offsets:Kafka offset Test" user@test.com
+   echo "No Invalid ISR's found" | mailx -s "  Kafka_Offsets:Kafka offset Test" user@test.com
 else
    echo -e "$report_client" | mailx -s " Kafka_Offsets:Kafka offset Test" user@test.com
 fi
