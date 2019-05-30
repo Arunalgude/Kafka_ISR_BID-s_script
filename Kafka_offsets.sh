@@ -29,7 +29,7 @@ var=$(echo $var | sed 's/^//g')
             fi
         done
         if [[ $flag -ne 1 ]];then
-            report_client="${report_client}Current Broker Id's in Kafka::${broker_ids}\n Invalid Broker id found in Isr:\n${var}\n"
+            report_client="${report_client}Current Broker Id's in Kafka::${broker_ids}\n Invalid Broker IDs found in Isr::\n${var}\n"
         fi
     done
 done <<< $(echo $full_isr)
