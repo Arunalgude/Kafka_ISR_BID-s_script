@@ -29,13 +29,13 @@ var=$(echo $var | sed 's/^//g')
             fi
         done
         if [[ $flag -ne 1 ]];then
-            report_client="${report_client}Invalid Broker id found in Isr:::${broker_ids}\n${var}\n"
+            report_client="${report_client}Current Broker Id's in Kafka::${broker_ids}\n Invalid Broker id found in Isr:\n${var}\n"
         fi
     done
 done <<< $(echo $full_isr)
 
 if [[ -z $report_client ]];then
-   echo "No Invalid ISR's found" | mailx -s "  Kafka_Offsets:Kafka offset Test" user@test.com
+   echo "No Invalid Broker IDs found in ISR" | mailx -s "  Kafka_Offsets:Kafka offset Test" user@test.com
 else
    echo -e "$report_client" | mailx -s " Kafka_Offsets:Kafka offset Test" user@test.com
 fi
