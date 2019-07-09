@@ -10,11 +10,11 @@ ZK_LIST=`cat $KAFKA_DIR/kafka.properties | grep "zookeeper.connect" | awk -F"=" 
 
 #List the broker ids.
 
-broker_ids=$(kafka-run-class org.apache.zookeeper.ZooKeeperMain -server $ZK_LIST <<< "ls /brokers/ids" | tail -1|sed 's/[][]//g'| sed -e 's/,//g')
+broker_ids=$(kafka-run-class org.apache.zookeeper.ZooKeeperMain -server $ZK_LIST  2>/dev/null <<< "ls /brokers/ids" | tail -1|sed 's/[][]//g'| sed -e 's/,//g')
 
 
 #list the ISRs
-full_isr=$(kafka-topics --zookeeper $ZK_LIST --describe | grep -i isr | grep -i topic| sed 's/Topic/^Topic/g')
+full_isr=$(kafka-topics --zookeeper $ZK_LIST --describe 2>/dev/null | grep -i isr | grep -i topic| sed 's/Topic/^Topic/g')
 
 full_isr=$(echo "$full_isr^" | sed 's/^//')
 
